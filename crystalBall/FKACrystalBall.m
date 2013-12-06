@@ -10,6 +10,7 @@
 
 @implementation FKACrystalBall
 
+//this method is used in both touch and motion events to hold the possible responses
 - (NSArray *) predictions {
     if (_predictions  == nil) {
         _predictions = [[NSArray alloc] initWithObjects:@"It is certain", @"It is probable", @"For sure",
@@ -21,5 +22,6 @@
     int random = arc4random_uniform(self.predictions.count);
     return [self.predictions objectAtIndex:random];
 }
+
 
 @end
